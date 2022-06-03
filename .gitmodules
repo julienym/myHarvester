@@ -1,3 +1,0 @@
-[submodule "charts/harvester"]
-	path = charts/harvester
-	url = https://github.com/harvester/harvester.git
