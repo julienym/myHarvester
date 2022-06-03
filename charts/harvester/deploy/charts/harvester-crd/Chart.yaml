@@ -1,0 +1,12 @@
+apiVersion: v2
+name: harvester-crd
+version: 1.0.2-dev
+appVersion: v1.0.2-dev
+description: Helm chart for deploying Harvester CRDs.
+icon: https://harvester.github.io/images/logo_horizontal.svg
+keywords:
+  - virtualization
+  - HCI
+home: https://github.com/harvester/harvester
+sources:
+  - https://github.com/harvester/harvester

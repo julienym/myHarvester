@@ -1,0 +1,29 @@
+# Default values:
+# https://github.com/harvester/harvester/blob/master/deploy/charts/harvester/values.yaml
+replicas: 1
+service:
+#   harvester:
+#     type: NodePort
+#     httpsNodePort: 30443
+#     httpNodePort: 30080
+  vip:
+    enabled: true
+#     type: NodePort
+
+# rancherEmbedded: true
+
+harvester-node-disk-manager:
+  enabled: true
+
+harvester-network-controller:
+  enabled: true
+
+harvester-load-balancer:
+  enabled: true
+
+kube-vip:
+  enabled: true
+
+# containers:
+#   apiserver:
+#     hciMode: true

@@ -1,0 +1,50 @@
+containers:
+  apiserver:
+    hciMode: true
+    image:
+      imagePullPolicy: IfNotPresent
+global:
+  fleet:
+    clusterLabels:
+      management.cattle.io/cluster-display-name: local
+      management.cattle.io/cluster-name: local
+      provider.cattle.io: harvester
+harvester-load-balancer:
+  enabled: true
+harvester-network-controller:
+  enabled: true
+  image:
+    pullPolicy: IfNotPresent
+  vipEnabled: true
+harvester-node-disk-manager:
+  enabled: true
+  image:
+    pullPolicy: IfNotPresent
+  labelFilter:
+  - COS_*
+  - HARV_*
+kube-vip:
+  enabled: true
+kube-vip-cloud-provider:
+  enabled: true
+kubevirt:
+  spec:
+    monitorAccount: rancher-monitoring-operator
+    monitorNamespace: cattle-monitoring-system
+longhorn:
+  defaultSettings:
+    defaultDataPath: /var/lib/harvester/defaultdisk
+    taintToleration: kubevirt.io/drain:NoSchedule
+  enabled: true
+multus:
+  enabled: false
+rancherEmbedded: true
+service:
+  vip:
+    enabled: true
+    hwAddress: ""
+    ip: 192.168.4.2
+    mode: static
+webhook:
+  image:
+    imagePullPolicy: IfNotPresent
