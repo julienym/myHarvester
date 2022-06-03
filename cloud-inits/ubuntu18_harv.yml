@@ -1,0 +1,15 @@
+#cloud-config
+
+packages:
+ - ntp
+ - qemu-guest-agent
+ - nfs-common
+ 
+users:
+  - name: ubuntu
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    ssh_authorized_keys: ${ssh_pub_key}
+    shell: /bin/bash
+  
+runcmd:
+  - ${rancher_join_command} %{ for role in roles ~} --${role} %{ endfor ~}
